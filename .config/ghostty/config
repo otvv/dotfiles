@@ -1,0 +1,17 @@
+##
+## suizld config
+##
+
+##### font settings
+font-family = Geist Mono
+font-size = 10
+
+
+##### appearance
+window-padding-x = 5
+window-padding-y = 5
+background = #161515
+foreground = #CECECE
+
+#### general
+resize-overlay-duration = 2s

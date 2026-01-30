@@ -1,0 +1,52 @@
+[global]
+    monitor = 0
+    follow = mouse
+    width = 300
+    height = (80, 90)
+    origin = top-right
+    offset = (10, 10)
+    scale = 0
+    fullscreen = "pushback"
+    progress_bar = true
+    transparency = 30
+    frame_width = 1
+    frame_color = "#E1DFE145"
+    separator_color = "frame"
+    padding = 15
+    horizontal_padding = 20
+    text_icon_padding = 10
+    corner_radius = 5
+    font = Geist 10
+    line_height = 2
+    format = "<b>%a</b>\n%s - %b"
+    alignment = center
+    show_age_threshold = 30
+    word_wrap = yes
+    ellipsize = middle
+    stack_duplicates = true
+    hide_duplicate_count = true
+    dmenu = wofi -dmenu
+    browser = xdg-open
+    icon_position = left
+    icon_corner_radius = 6
+    icon_theme = Papirus
+    min_icon_size = 32
+    max_icon_size = 48
+    indicate_hidden = true
+    gap_size = 10
+    separator_height = 5
+
+[urgency_low]
+    background = "#262626DD"
+    foreground = "#F8F8F2"
+    timeout = 4
+
+[urgency_normal]
+    background = "#2E2E2EDD"
+    foreground = "#FFFFFF"
+    timeout = 8
+
+[urgency_critical]
+    background = "#CC4C4CDD"
+    foreground = "#FFFFFF"
+    timeout = 0

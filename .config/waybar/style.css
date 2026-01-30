@@ -1,0 +1,163 @@
+* {
+  font-family: "Geist, Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
+  color: #cecece;
+  font-size: 13.5px;
+}
+
+window#waybar {
+  background: rgba(25, 25, 25, 0.45);
+  transition: background 0.2s;
+  border-radius: 12px;
+}
+
+.modules-left {
+  margin: 5px 5px;
+  background: rgba(25, 25, 25, 0.65);
+  border-style: none;
+  border-color: transparent;
+  border-radius: 10px;
+}
+.modules-center {
+  margin: 5px 5px;
+  background: rgba(25, 25, 25, 0.65);
+  border-radius: 10px;
+}
+.modules-right {
+  margin: 5px 5px;
+  background: rgba(25, 25, 25, 0.65);
+  border-radius: 10px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#language,
+#mpd {
+  padding: 0 5px;
+  border-radius: 12px;
+  font-size: 13.5px;
+}
+
+#mpris {
+  margin-left: 5px;
+  margin-right: 5px;
+  
+  padding: 0 5px;
+  border-radius: 12px;
+  font-size: 13.5px;
+}
+
+#mpris:hover, #mpris.playing {
+  color: #ffffff;
+  transition: color 0.5s;
+}
+
+#mpris.paused {
+  color: #cecece;
+  transition: color 0.5s;
+}
+
+#idle_inhibitor {
+  font-size: 11px;
+  font-weight: 600;
+  padding-top: 1px;
+  padding-left: 9px;
+  padding-right: 7px;
+
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+#network {
+  border-radius: 12px;
+  font-size: 20px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+#pulseaudio {
+  border-radius: 12px;
+  font-size: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+#pulseaudio.muted {
+  color: #696969;
+}
+#bluetooth {
+  color: #cecece;
+  border-radius: 12px;
+  font-size: 18px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+#bluetooth.disabled {
+  color: #e64c4c;
+}
+#bluetooth.off {
+  color: #696969;
+}
+#tray {
+  padding-left: 6px;
+  padding-right: 12px;
+
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#network:hover,
+#pulseaudio:hover,
+#bluetooth:hover,
+#idle_inhibitor:hover,
+#language:hover,
+#tray:hover,
+#mpd:hover {
+  color: #ffffff;
+  background: rgba(25, 25, 25, 0.45);
+  
+  transition: color 0.5s;
+  transition: background 0.5s;
+}
+
+#workspaces:hover {
+  background: transparent;
+  color: transparent;
+  border-color: transparent;
+  
+  border-style: none;
+  text-shadow: none;
+  
+}
+
+#workspaces button {
+  background: transparent;
+  color: transparent;
+  border-color: transparent;
+  
+  border-style: none;
+  text-shadow: none;
+  border-radius: 5px;
+}
+
+#custom-fedora {
+  padding: 6px 6px;
+  font-size: 20px;
+  transition: color 0.5s;
+}
+#custom-fedora:hover {
+  color: #ffffff;
+}

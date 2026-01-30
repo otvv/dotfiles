@@ -1,0 +1,156 @@
+{
+  "custom/fedora": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "existing is a given; living is a choice.",
+    "on-click": "wofi --show drun ~/.config/wofi/config --style ~/.config/wofi/style.css",
+    "on-click-middle": "sh ~/.config/hypr/wofi-session.sh"
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "use-icon": true,
+    "format": "<span font='9'>{icon}</span>",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+  "mpris": {
+    "format": "{player_icon} {artist} - {title}",
+    "format-paused": "{status_icon} {artist} - {title}",
+    "max-length": 45,
+    "ellipsis": "…",
+    "tooltip-format-playing": "{artist} - {title}",
+    "tooltip-format-paused": "(Paused) {artist} - {title}",
+    "tooltip-format": "Nothing playing at the moment.",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "ignored-players": ["firefox", "chrome"], // add players to ignore here if you need to
+    "player-icons": {
+      "default": "",
+      "spotify": "",
+      "mpv": "",
+      "vlc": "",
+    },
+    "status-icons": {
+    	"playing": "",
+    	"paused": "",
+    	"stopped": ""
+    }
+  },
+  "gamemode": {
+    "format": "{glyph}",
+    "format-alt": "{glyph} {count}",
+    "glyph": "",
+    "hide-not-running": true,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 20,
+    "tooltip": false,
+    "tooltip-format": "Games running: {count}"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "tooltip": true,
+    "tooltip-format-activated": "Enabled",
+    "tooltip-format-deactivated": "Disabled",
+    "on-click-middle": "" // TODO: open an idle manager once I find one that I like (for now I'll just open the hypridle config file.
+  },
+  "bluetooth": {
+    // "format": "󰂯 {status}",
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱 {device_alias}",
+    "tooltip": true,
+    "tooltip-format": "Awaiting connection",
+    "tooltip-format-disabled": "Bluetooth device disabled",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "Connected @ {device_alias}\t{device_battery_percentage}%",
+    "on-click": "bash -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'", // disable device on click
+    "on-click-middle": "blueman-manager",
+    "class": "{status}"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "format": "{icon}",
+    "format-muted": "",
+    "tooltip": true,
+    "tooltip-format": "{volume}%",
+    "tooltip-format-muted": "Volume muted",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle", // mute on click
+    "on-click-middle": "flatpak run com.saivert.pwvucontrol"
+  },
+  "network": {
+    "format-wifi": "{icon}",
+    "format-ethernet": "",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "Connected @ {essid}",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤢", "󰤨"],
+    "on-click": "",
+    "on-click-middle": "nm-connection-editor" // TODO: find a more user-friendly network manager
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true,
+    "on-click": "",
+    "on-click-middle": "gnome-system-monitor"
+  },
+  "memory": {
+    "format": "  {}%",
+    "tooltip": true,
+    "on-click": "",
+    "on-click-middle": "gnome-system-monitor"
+  },
+  "temperature": {
+    "interval": 10,
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+    "critical-threshold": 90,
+    "format-critical": " {temperatureC}",
+    "format": " {temperatureC}°C",
+    "on-click": "",
+    "on-click-middle": "lact"
+  },
+  "hyprland/language": {
+    "format": "  {}",
+    "format-en": "EN",
+    "format-pt": "PT"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-full": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
+    "format-alt": "{time}  {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "battery#bat2": {
+    "bat": "BAT2"
+  },
+  "clock": {
+    "format": "{:%a, %e  |  %H:%M} ",
+    "tooltip-format": "{:%d-%m-%Y}",
+    "on-click": "",
+    "on-click-middle": "gnome-calendar"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 5
+  }
+}

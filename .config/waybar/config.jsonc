@@ -1,0 +1,32 @@
+// -*- mode: jsonc -*-
+{
+  "reload_style_on_change": true, // reload bar style on change
+  "layer": "top", // waybar at top layer
+  "position": 10, // waybar position (top|bottom|left|right)
+  // "height": 42, // waybar height (to be removed for auto height)
+  // "width": 2560, // waybar width
+  "spacing": 3, // gaps between modules
+  "exclusive": true,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-top": 5,
+
+  // order of the modules
+  "modules-left": ["custom/fedora", "hyprland/workspaces"],
+  "modules-center": ["mpris"],
+  "modules-right": [
+    "idle_inhibitor",
+    "gamemode",
+    "network",
+    "pulseaudio",
+    "bluetooth",
+    // "cpu",
+    // "memory",
+    // "temperature",
+    "clock",
+    "tray",
+  ],
+
+  // modules configuration
+  "include": ["~/.config/waybar/modules.json"],
+}

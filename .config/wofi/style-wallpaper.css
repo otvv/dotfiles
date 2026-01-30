@@ -1,0 +1,65 @@
+/* inherit your palette */
+@define-color colorBackground #242424;
+@define-color colorBorder #e1dfe1;
+@define-color colorText #cecece;
+@define-color colorTextAlt #ffffff;
+
+* {
+    all: unset;
+    font-family: 'Geist', monospace;
+    color: @colorText;
+    background-color: transparent;
+    transition: all 0.15s ease-out;
+}
+
+#window {
+    background: alpha(@colorBackground, 0.58);
+    margin: 0px;
+    padding: 0px;
+    border-radius: 13px;
+    border: 1px solid alpha(@colorBorder, 0.2);
+    box-shadow: 0 8px 32px alpha(@colorBackground, 0.4);
+}
+
+#outer-box {
+    margin: 0px;
+    padding: 10px;
+    min-width: 320px;
+}
+
+#input {
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#entry {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid alpha(@colorBorder, 0.05);
+    background: alpha(@colorBackground, 0.2);
+}
+
+#entry:hover {
+    background: alpha(@colorBackground, 0.35);
+    border: 1px solid alpha(@colorBorder, 0.2);
+}
+
+#entry:selected {
+    background: alpha(@colorBackground, 0.45);
+    border: 1px solid alpha(@colorBorder, 0.4);
+    box-shadow:
+        0 0 0 2px alpha(@colorBorder, 0.15),
+        0 8px 24px alpha(@colorBackground, 0.6);
+}
+
+#text {
+    opacity: 0;
+    font-size: 0px;
+    margin: 0;
+    padding: 0;
+    color: transparent;
+
+    min-width: 0px;
+}
