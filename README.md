@@ -1,6 +1,8 @@
 # dotfiles
 my personal hyprland dotfiles
 
+readme is still wip,  ill add the necessary dependencies at a later date.
+
 
 # screenshots 
 ![overal](assets/ss1.png)
