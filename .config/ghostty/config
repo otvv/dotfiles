@@ -1,17 +1,20 @@
-##
-## suizld config
-##
+###########################
+# suizld's ghostty config #
+###########################
 
 ##### font settings
 font-family = Geist Mono
 font-size = 10
 
-
 ##### appearance
 window-padding-x = 5
 window-padding-y = 5
-background = #161515
+background = #242424
 foreground = #CECECE
+cursor-style = underline
+bold-is-bright = true
 
-#### general
+##### general
 resize-overlay-duration = 2s
+shell-integration = none
+mouse-hide-while-typing = true

@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+HYPRLOCK_DIR="$HOME/.cache/hyprlock"
+HYPRLOCK_WALLSYM="$HYPRLOCK_DIR/current_wallpaper"
+mkdir -p "$HYPRLOCK_DIR"
+
 THUMB_DIR="$HOME/.cache/wofi_wallpapers"
 mkdir -p "$THUMB_DIR"
 
@@ -47,7 +51,7 @@ menu() {
   | sort -z \
   | while IFS= read -r -d '' f; do
       base="$(basename "$f")"
-      # only affects visual label (avoid ':' parsing issues)
+      # Only affects visual label
       display="${base//:/∶}"
 
       thumb="$(thumb_for "$f")"
@@ -78,7 +82,7 @@ fi
 
 WALLPAPER_PATH="$CHOICE"
 
-# Basic safety: ensure it exists
+# Ensure it exists
 if [[ ! -f "$WALLPAPER_PATH" ]]; then
   echo "Selected wallpaper does not exist: $WALLPAPER_PATH" >&2
   exit 1
@@ -90,13 +94,16 @@ CONF="$HOME/.config/hypr/hyprpaper.conf"
 sed -i '/^preload =/d' "$CONF"
 sed -i '/^wallpaper =/d' "$CONF"
 
-# Append new lines
 {
   echo "preload = $WALLPAPER_PATH"
   echo "wallpaper = , $WALLPAPER_PATH"
 } >> "$CONF"
 
-# Restart hyprpaper reliably
+# Creates a symlink of the current wallpaper for hyprlock
+# at: /home/user/.cache/hyprlock
+# ln -sf "$WALLPAPER_PATH" "$HYPRLOCK_WALLSYM"
+
+# Restart hyprpaper
 pkill -x hyprpaper 2>/dev/null || true
 hyprpaper &
 
