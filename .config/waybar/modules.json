@@ -1,6 +1,6 @@
 {
   "custom/fedora": {
-    "format": "",
+    "format": "", // feel free to change the icon to w/e distro you're using
     "tooltip": true,
     "tooltip-format": "existing is a given; living is a choice.",
     "on-click": "wofi --show drun ~/.config/wofi/config --style ~/.config/wofi/style.css",
@@ -11,7 +11,7 @@
     "all-outputs": true,
     "warp-on-scroll": false,
     "use-icon": true,
-    "format": "<span font='9'>{icon}</span>",
+    "format": "<span>{icon}</span>",
     "format-icons": {
       "urgent": "",
       "active": "",
@@ -29,7 +29,7 @@
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
     "on-click-middle": "playerctl previous",
-    "ignored-players": ["firefox", "chrome"], // add players to ignore here if you need to
+    "ignored-players": ["firefox", "chrome", "chromium"], // add players to ignore here if you need
     "player-icons": {
       "default": "",
       "spotify": "",
@@ -63,7 +63,7 @@
     "tooltip": true,
     "tooltip-format-activated": "Enabled",
     "tooltip-format-deactivated": "Disabled",
-    "on-click-middle": "" // TODO: open an idle manager once I find one that I like (for now I'll just open the hypridle config file.
+    "on-click-middle": "control --battery"
   },
   "bluetooth": {
     // "format": "󰂯 {status}",
@@ -77,7 +77,8 @@
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "Connected @ {device_alias}\t{device_battery_percentage}%",
     "on-click": "bash -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'", // disable device on click
-    "on-click-middle": "blueman-manager",
+    "on-click-middle": "control --bluetooth",
+    // "on-click-middle": "blueman-manager", // alternatively you can use blueman-manager
     "class": "{status}"
   },
   "pulseaudio": {
@@ -90,8 +91,10 @@
     "format-icons": {
       "default": ["", "", ""]
     },
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle", // mute on click
-    "on-click-middle": "flatpak run com.saivert.pwvucontrol"
+    "on-click": "~/.config/hypr/wofi-audio.sh",
+    "on-click-middle": "control --volume",
+    // "on-click-middle": "pwvucontrol", // alternatively you can use pwvucontrol or pavucontrol
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle" // mute on click
   },
   "network": {
     "format-wifi": "{icon}",
@@ -100,7 +103,8 @@
     "tooltip-format": "Connected @ {essid}",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤢", "󰤨"],
     "on-click": "",
-    "on-click-middle": "nm-connection-editor" // TODO: find a more user-friendly network manager
+    "on-click-middle": "control --wifi"
+    // "on-click-middle": "nm-connection-editor" // alternatively you can use nm-connection-editor
   },
   "cpu": {
     "format": "  {usage}%",
@@ -138,10 +142,8 @@
     "format-charging": "  {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{time}  {icon}",
-    "format-icons": ["", "", "", "", ""]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
+    "format-icons": ["", "", "", "", ""],
+    "on-click-middle": "control --battery",
   },
   "clock": {
     "format": "{:%a, %e  |  %H:%M} ",

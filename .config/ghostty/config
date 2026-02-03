@@ -11,10 +11,16 @@ window-padding-x = 5
 window-padding-y = 5
 background = #242424
 foreground = #CECECE
-cursor-style = underline
 bold-is-bright = true
+
+##### cursor shaders
+cursor-style = underline
+custom-shader = shaders/cursor_tail.glsl
+custom-shader = shaders/ripple_rectangle_cursor.glsl
 
 ##### general
 resize-overlay-duration = 2s
 shell-integration = none
 mouse-hide-while-typing = true
+confirm-close-surface = false
+custom-shader-animation = always

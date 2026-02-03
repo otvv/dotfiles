@@ -1,14 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
-CHOICE="$(
+WOFI_CMD="$(
   printf '%b' " [Lock]\n󰗼 [Logout]\n [Reboot]\n [Suspend]\n [Shutdown]\n" \
   | wofi --hide-search --conf "$HOME/.config/wofi/config-session" --cache-file=/dev/null
 )"
 
-[[ -z "${CHOICE:-}" ]] && exit 0
+[[ -z "${WOFI_CMD:-}" ]] && exit 0
 
-case "$CHOICE" in
+case "$WOFI_CMD" in
   " [Lock]") hyprlock ;;
   "󰗼 [Logout]") hyprctl dispatch exit ;;
   " [Reboot]") systemctl reboot ;;
