@@ -76,8 +76,7 @@ WOFI_CMD="$(
 # if wofi returns an image entry (img:...:text:...), keep only the path after "text:"
 WOFI_CMD="${WOFI_CMD##*:text:}"
 
-# exit in case user closes
-if [[ -z "${CHOICE:-}" ]]; then
+if [[ -z "${WOFI_CMD:-}" ]]; then
   exit 0
 fi
 
@@ -105,7 +104,7 @@ sed -i '/^wallpaper =/d' "$CONF"
 } >> "$CONF"
 
 # creates a symlink of the current wallpaper for hyprlock
-# at: /home/user/.cache/hyprlock
+# at: /home/USER/.cache/hyprlock
 # ln -sf "$WALLPAPER_PATH" "$HYPRLOCK_WALLSYM"
 
 # restart hyprpaper
