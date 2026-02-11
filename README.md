@@ -1,6 +1,18 @@
 # dotfiles
 my personal hyprland dotfiles
 
+### screenshots 
+<p><img src="assets/ss1.png" alt="overal" width="900" /></p>
+<details>
+<summary><i>click to show more images</i></summary>
+  <p><img src="assets/ss2.png" alt="app-launcher" width="900" /></p>
+  <p><img src="assets/ss3.png" alt="session-menu" width="900" /></p>
+  <p><img src="assets/ss4.png" alt="wallpaper-picker" width="900" /></p>
+  <p><img src="assets/ss5.png" alt="dunst" width="900" /></p>
+</details>
+
+**wallpaper by**: <a href="https://otvv.github.io/wallpaperize">🌆 wallpaperize!</a>
+
 ### dependencies
 
 ```txt
@@ -43,15 +55,3 @@ ghostty
 
 
 ```
-
-**wallpaper by**: <a href="https://otvv.github.io/wallpaperize">🌆 wallpaperize!</a>
-
-# screenshots 
-<p><img src="assets/ss1.png" alt="overal" width="900" /></p>
-<details>
-<summary><i>click to show more images</i></summary>
-  <p><img src="assets/ss2.png" alt="app-launcher" width="900" /></p>
-  <p><img src="assets/ss3.png" alt="session-menu" width="900" /></p>
-  <p><img src="assets/ss4.png" alt="wallpaper-picker" width="900" /></p>
-  <p><img src="assets/ss5.png" alt="dunst" width="900" /></p>
-</details>
