@@ -16,6 +16,7 @@
   "modules-center": ["mpris"],
   "modules-right": [
     "idle_inhibitor",
+    "custom/docker",
     "gamemode",
     "network",
     "pulseaudio",
@@ -23,6 +24,7 @@
     // "cpu",
     // "memory",
     // "temperature",
+    "hyprland/language",
     "clock",
     "tray",
   ],

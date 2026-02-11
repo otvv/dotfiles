@@ -65,6 +65,17 @@
     "tooltip-format-deactivated": "Disabled",
     "on-click-middle": "control --battery"
   },
+"custom/docker": {
+  "exec": "sh -c 'docker ps -q 2>/dev/null | wc -l'",
+  "interval": 10,
+  "return-type": "json",
+  "format": "{icon}",
+  "format-icons": {
+    "default": ""
+  },
+  "tooltip": true, // TODO: add uptime on tooltip
+  "exec": "sh -c 'n=$(docker ps -q 2>/dev/null | wc -l); if [ \"$n\" -gt 0 ]; then printf \"{\\\"text\\\":\\\"%s\\\",\\\"tooltip\\\":\\\"Containers running: %s\\\",\\\"class\\\":\\\"on\\\"}\" \"$n\" \"$n\"; else printf \"{\\\"text\\\":\\\"%s\\\",\\\"tooltip\\\":\\\"No containers running\\\",\\\"class\\\":\\\"off\\\"}\" 0; fi'"
+},
   "bluetooth": {
     // "format": "󰂯 {status}",
     "format-on": "󰂯",
@@ -102,20 +113,17 @@
     "format-disconnected": "󰌙",
     "tooltip-format": "Connected @ {essid}",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤢", "󰤨"],
-    "on-click": "",
     "on-click-middle": "control --wifi"
     // "on-click-middle": "nm-connection-editor" // alternatively you can use nm-connection-editor
   },
   "cpu": {
     "format": "  {usage}%",
     "tooltip": true,
-    "on-click": "",
     "on-click-middle": "gnome-system-monitor"
   },
   "memory": {
     "format": "  {}%",
     "tooltip": true,
-    "on-click": "",
     "on-click-middle": "gnome-system-monitor"
   },
   "temperature": {
@@ -124,13 +132,12 @@
     "critical-threshold": 90,
     "format-critical": " {temperatureC}",
     "format": " {temperatureC}°C",
-    "on-click": "",
     "on-click-middle": "lact"
   },
   "hyprland/language": {
-    "format": "  {}",
-    "format-en": "EN",
-    "format-pt": "PT"
+    "format": " {short}",
+    "tooltip": true,
+    "on-click-middle": "sh -c 'hyprctl switchxkblayout current next >/dev/null 2>&1; notify-send \"Waybar\" \"Keyboard layout changed.\"'"
   },
   "battery": {
     "states": {
@@ -148,7 +155,6 @@
   "clock": {
     "format": "{:%a, %e  |  %H:%M} ",
     "tooltip-format": "{:%d-%m-%Y}",
-    "on-click": "",
     "on-click-middle": "gnome-calendar"
   },
   "tray": {
