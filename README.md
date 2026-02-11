@@ -28,10 +28,12 @@ docker
 ghostty
 nautilus
 ```
-
 # screenshots 
-![overal](assets/ss1.png)
-![app-launcher](assets/ss2.png)
-![session-menu](assets/ss3.png)
-![wallpaper-picker](assets/ss4.png)
-![dunst](assets/ss5.png)
+ <p><img src="assets/ss1.png" alt="overal" width="900" /></p>
+<details>
+<summary><i>click to show more</i></summary>
+  <p><img src="assets/ss2.png" alt="app-launcher" width="900" /></p>
+  <p><img src="assets/ss3.png" alt="session-menu" width="900" /></p>
+  <p><img src="assets/ss4.png" alt="wallpaper-picker" width="900" /></p>
+  <p><img src="assets/ss5.png" alt="dunst" width="900" /></p>
+</details>
