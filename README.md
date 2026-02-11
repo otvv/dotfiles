@@ -27,9 +27,10 @@ hypridle
 waybar
 wofi
 dunst
-lxqt-policykit  # (or any other polkit agent you prefer)
+lxqt-policykit  # (or any other polkit agent)
 nm-connection-editor
 blueman-manager
+grim
 
 # Other dependencies
 
@@ -52,6 +53,4 @@ nautilus
 pwvucontrol
 docker
 ghostty
-
-
 ```
