@@ -44,7 +44,7 @@ ghostty
 
 ```
 
-**wallpapers used**: <a href="https://otvv.github.io/wallpaperize">🌆 wallpaperize!</a>
+**wallpaper by**: <a href="https://otvv.github.io/wallpaperize">🌆 wallpaperize!</a>
 
 # screenshots 
 <p><img src="assets/ss1.png" alt="overal" width="900" /></p>
