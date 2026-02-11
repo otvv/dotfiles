@@ -1,13 +1,9 @@
 # dotfiles
 my personal hyprland dotfiles
 
-readme is still wip,  ill add the necessary dependencies at a later date.
-
-
 ### dependencies
 
-´´´
-
+```txt
 # Hyprland (the bare minimum)
 
 hyprland
@@ -31,7 +27,7 @@ pwvucontrol # or pavucontrol
 docker
 ghostty
 nautilus
-´´´
+```
 
 # screenshots 
 ![overal](assets/ss1.png)
