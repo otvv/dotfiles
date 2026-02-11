@@ -4,6 +4,35 @@ my personal hyprland dotfiles
 readme is still wip,  ill add the necessary dependencies at a later date.
 
 
+### dependencies
+
+´´´
+
+# Hyprland (the bare minimum)
+
+hyprland
+hyprpaper
+hyprpicker
+hyprlock
+hyprsunset
+hypridle
+waybar
+wofi
+dunst
+lxqt-policykit-agent  # (or any other polkit agent you prefer)
+
+# Software I use
+
+helium
+better-control
+gnome-calendar
+gnome-system-monitor
+pwvucontrol # or pavucontrol
+docker
+ghostty
+nautilus
+´´´
+
 # screenshots 
 ![overal](assets/ss1.png)
 ![app-launcher](assets/ss2.png)
