@@ -16,11 +16,14 @@ waybar
 wofi
 dunst
 lxqt-policykit-agent  # (or any other polkit agent you prefer)
+nm-connection-editor
+blueman-manager
 
 # Software I use
 
 helium
-better-control
+zen-browser
+better-control # https://github.com/better-ecosystem/better-control
 gnome-calendar
 gnome-system-monitor
 pwvucontrol # or pavucontrol
