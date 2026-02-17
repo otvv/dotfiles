@@ -3,8 +3,8 @@
     "format": "", // feel free to change the icon to w/e distro you're using
     "tooltip": true,
     "tooltip-format": "existing is a given; living is a choice.",
-    "on-click": "wofi --show drun ~/.config/wofi/config --style ~/.config/wofi/style.css",
-    "on-click-middle": "sh ~/.config/hypr/wofi-session.sh"
+    "on-click": "sh ~/.config/wofi/wofi_session.sh",
+    "on-click-middle": "wofi --show drun ~/.config/wofi/config --style ~/.config/wofi/style.css",
   },
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -42,6 +42,20 @@
     	"stopped": ""
     }
   },
+ "custom/mic": {
+  "return-type": "json",
+  "interval": 5,
+  "tooltip": true,
+  "format": "{text}",
+  "exec": "~/.config/waybar/scripts/waybar_microphone_use_indicator.sh",
+},
+"custom/screencast": {
+  "return-type": "json",
+  "interval": 5,
+  "tooltip": true,
+  "format": "{text}",
+  "exec": "~/.config/waybar/scripts/waybar_screencast_indicator.sh",
+  },
   "gamemode": {
     "format": "{glyph}",
     "format-alt": "{glyph} {count}",
@@ -66,7 +80,7 @@
     "on-click-middle": "control --battery"
   },
 "custom/docker": {
-  "exec": "sh -c 'docker ps -q 2>/dev/null | wc -l'",
+  "exec": "~/.config/waybar/scripts/waybar_docker_indicator.sh",
   "interval": 10,
   "return-type": "json",
   "format": "{icon}",
@@ -74,22 +88,21 @@
     "default": ""
   },
   "tooltip": true, // TODO: add uptime on tooltip
-  "exec": "sh -c 'n=$(docker ps -q 2>/dev/null | wc -l); if [ \"$n\" -gt 0 ]; then printf \"{\\\"text\\\":\\\"%s\\\",\\\"tooltip\\\":\\\"Containers running: %s\\\",\\\"class\\\":\\\"on\\\"}\" \"$n\" \"$n\"; else printf \"{\\\"text\\\":\\\"%s\\\",\\\"tooltip\\\":\\\"No containers running\\\",\\\"class\\\":\\\"off\\\"}\" 0; fi'"
-},
+  },
   "bluetooth": {
     // "format": "󰂯 {status}",
-    "format-on": "󰂯",
-    "format-off": "󰂲",
-    "format-disabled": "󰂲",
-    "format-connected": "󰂱 {device_alias}",
+   "format-on": "<span size=\"13000\">󰂯</span>",
+   "format-off": "<span size=\"13000\">󰂲</span>",
+   "format-disabled": "<span size=\"13000\">󰂲</span>",
+   "format-connected": "<span size=\"13000\">󰂱</span> {device_alias}",
     "tooltip": true,
     "tooltip-format": "Awaiting connection",
     "tooltip-format-disabled": "Bluetooth device disabled",
     "tooltip-format-connected": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": "Connected @ {device_alias}\t{device_battery_percentage}%",
-    "on-click": "bash -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'", // disable device on click
-    "on-click-middle": "control --bluetooth",
+    "tooltip-format-enumerate-connected": "Connected @ {device_alias}",
+    "on-click": "bash -c 'bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on'",
     // "on-click-middle": "blueman-manager", // alternatively you can use blueman-manager
+    "on-click-middle": "control --bluetooth",
     "class": "{status}"
   },
   "pulseaudio": {
@@ -102,10 +115,10 @@
     "format-icons": {
       "default": ["", "", ""]
     },
-    "on-click": "~/.config/hypr/wofi-audio.sh",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle", // mute on click
     "on-click-middle": "control --volume",
     // "on-click-middle": "pwvucontrol", // alternatively you can use pwvucontrol or pavucontrol
-    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle" // mute on click
+    "on-click-right": "~/.config/wofi/wofi_audio.sh"
   },
   "network": {
     "format-wifi": "{icon}",
@@ -113,8 +126,8 @@
     "format-disconnected": "󰌙",
     "tooltip-format": "Connected @ {essid}",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤢", "󰤨"],
+    // "on-click-middle": "nm-connection-editor", // alternatively you can use nm-connection-editor
     "on-click-middle": "control --wifi"
-    // "on-click-middle": "nm-connection-editor" // alternatively you can use nm-connection-editor
   },
   "cpu": {
     "format": "  {usage}%",
@@ -126,18 +139,15 @@
     "tooltip": true,
     "on-click-middle": "gnome-system-monitor"
   },
-  "temperature": {
-    "interval": 10,
-    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
-    "critical-threshold": 90,
-    "format-critical": " {temperatureC}",
-    "format": " {temperatureC}°C",
-    "on-click-middle": "lact"
+  "custom/gpu_temperature": {
+    "interval": 5,
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/waybar_gpu_temperature.sh",
+    "on-click-middle": "flatpak run io.github.ilya_zlobintsev.LACT"
   },
   "hyprland/language": {
-    "format": " {short}",
-    "tooltip": true,
-    "on-click-middle": "sh -c 'hyprctl switchxkblayout current next >/dev/null 2>&1; notify-send \"Waybar\" \"Keyboard layout changed.\"'"
+    "format": " {long}",
+    "on-click-middle": "sh -c 'hyprctl switchxkblayout current next >/dev/null 2>&1; notify-send \"waybar\" \"Keyboard layout changed.\"'"
   },
   "battery": {
     "states": {

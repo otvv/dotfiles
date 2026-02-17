@@ -13,7 +13,7 @@ WOFI_CMD=(
   --location=top_right
   --width=350
   --height=200
-  --yoffset=10
+  --yoffset=5
   --xoffset=-30
 )
 

@@ -36,25 +36,63 @@ window#waybar {
 #temperature,
 #backlight,
 #network,
-#language,
-#mpd {
+#language {
   padding: 0 5px;
   border-radius: 12px;
   font-size: 13.5px;
+}
+
+#custom-screencast,
+#custom-mic {
+  border-radius: 12px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#custom-screencast.active {
+  padding: 0 5px;
+
+  font-size: 22px;
+  color: #e64c4c;
+}
+
+#custom-screencast.active:hover {
+  color: #ffffff;
+  transition: color 0.5s;
+  background: rgba(25, 25, 25, 0.45);
+}
+
+#custom-mic.active {
+  padding: 0 7px;
+
+  font-size: 14px;
+  color: #cecece;
+}
+
+#custom-mic.active:hover {
+  color: #ffffff;
+  transition: color 0.5s;
+  background: rgba(25, 25, 25, 0.45);
 }
 
 #mpris {
   margin-left: 5px;
   margin-right: 5px;
-  
+
   padding: 0 5px;
   border-radius: 12px;
   font-size: 13.5px;
 }
 
-#mpris:hover, #mpris.playing {
+#mpris.playing {
   color: #ffffff;
   transition: color 0.5s;
+}
+
+#mpris:hover {
+  color: #ffffff;
+  transition: background 0.5s;
+  background: rgba(25, 25, 25, 0.45);
 }
 
 #mpris.paused {
@@ -92,12 +130,16 @@ window#waybar {
 #bluetooth {
   color: #cecece;
   border-radius: 12px;
-  font-size: 18px;
+  font-size: 13.5px;
   padding-left: 6px;
   padding-right: 6px;
+  transition: color, 0.5s;
 }
 #bluetooth.disabled {
   color: #e64c4c;
+}
+#bluetooth.connected {
+  color: #ffffff;
 }
 #bluetooth.off {
   color: #696969;
@@ -124,11 +166,10 @@ window#waybar {
 #bluetooth:hover,
 #idle_inhibitor:hover,
 #language:hover,
-#tray:hover,
-#mpd:hover {
+#tray:hover {
   color: #ffffff;
   background: rgba(25, 25, 25, 0.45);
-  
+
   transition: color 0.5s;
   transition: background 0.5s;
 }
@@ -137,17 +178,16 @@ window#waybar {
   background: transparent;
   color: transparent;
   border-color: transparent;
-  
+
   border-style: none;
   text-shadow: none;
-  
 }
 
 #workspaces button {
   background: transparent;
   color: transparent;
   border-color: transparent;
-  
+
   border-style: none;
   text-shadow: none;
   border-radius: 5px;
@@ -174,11 +214,10 @@ window#waybar {
   color: #ffffff;
 }
 
-#custom-docker.off {
+#custom-docker.inactive {
   color: #696969;
 }
 
-#custom-docker.on {
+#custom-docker.active {
   color: #ffffff;
 }
-

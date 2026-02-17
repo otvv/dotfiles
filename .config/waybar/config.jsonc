@@ -13,17 +13,16 @@
 
   // order of the modules
   "modules-left": ["custom/fedora", "hyprland/workspaces"],
-  "modules-center": ["mpris"],
+  "modules-center": ["mpris", "cpu", "memory", "custom/gpu_temperature"],
   "modules-right": [
     "idle_inhibitor",
+    "custom/screencast",
+    "custom/mic", 
     "custom/docker",
     "gamemode",
     "network",
     "pulseaudio",
     "bluetooth",
-    // "cpu",
-    // "memory",
-    // "temperature",
     "hyprland/language",
     "clock",
     "tray",
