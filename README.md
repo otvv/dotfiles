@@ -16,7 +16,7 @@ my personal hyprland dotfiles
 ### dependencies
 
 ```txt
-# The bare minimum for Hyprland/dotfiles to work properly
+# The bare minimum for Hyprland work properly
 
 hyprland
 hyprpaper
@@ -27,12 +27,12 @@ hypridle
 waybar
 wofi
 dunst
-lxqt-policykit  # (or any other polkit agent)
+lxqt-policykit # or any other polkit agent
 nm-connection-editor
 blueman-manager
 grim
 
-# Other dependencies
+# Dendencies required by scripts, waybar modules, etc 
 
 ImageMagick
 fuse
@@ -42,9 +42,10 @@ pactl
 htop
 qt5ct
 qt6ct
+gamemode # comes with steam usually
 
-# Software needed (you can change them if you want too,
-# just chage the app that you want where it's referenced)
+# Software that I use (needed)
+# (you can change them if you want)
 
 better-control # https://github.com/better-ecosystem/better-control
 gnome-calendar
@@ -53,4 +54,5 @@ nautilus
 pwvucontrol
 docker
 ghostty
+lact
 ```
