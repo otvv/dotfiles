@@ -32,7 +32,7 @@ nm-connection-editor
 blueman-manager
 grim
 
-# Dendencies required by scripts, waybar modules, etc 
+# Dependencies required by scripts, waybar modules, etc 
 
 ImageMagick
 fuse
