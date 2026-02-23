@@ -3,7 +3,7 @@
     "format": "", // feel free to change the icon to w/e distro you're using
     "tooltip": true,
     "tooltip-format": "existing is a given; living is a choice.",
-    "on-click": "sh ~/.config/wofi/wofi_session.sh",
+    "on-click": "sh ~/.config/wofi/scripts/wofi_session.sh",
     "on-click-middle": "wofi --show drun ~/.config/wofi/config --style ~/.config/wofi/style.css",
   },
   "hyprland/workspaces": {
@@ -118,7 +118,7 @@
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle", // mute on click
     "on-click-middle": "control --volume",
     // "on-click-middle": "pwvucontrol", // alternatively you can use pwvucontrol or pavucontrol
-    "on-click-right": "~/.config/wofi/wofi_audio.sh"
+    "on-click-right": "~/.config/wofi/scripts/wofi_audio.sh"
   },
   "network": {
     "format-wifi": "{icon}",
