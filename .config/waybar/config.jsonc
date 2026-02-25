@@ -1,14 +1,12 @@
-// -*- mode: jsonc -*-
 {
   "reload_style_on_change": true, // reload bar style on change
   "layer": "top", // waybar at top layer
-  "position": 10, // waybar position (top|bottom|left|right)
-  // "height": 42, // waybar height (to be removed for auto height)
-  // "width": 2560, // waybar width
+  "position": 10, // custom waybar position (top|bottom|left|right)
+  // "width": 2560, // custom waybar width
   "spacing": 3, // gaps between modules
   "exclusive": true,
-  "margin-left": 10,
-  "margin-right": 10,
+  "margin-left": 5,
+  "margin-right": 5,
   "margin-top": 5,
 
   // order of the modules
@@ -28,6 +26,6 @@
     "tray",
   ],
 
-  // modules configuration
+  // custom module resources configuration
   "include": ["~/.config/waybar/modules.json"],
 }

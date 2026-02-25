@@ -31,9 +31,9 @@ thumb_for() {
       # center-crop-ish thumbnail (keeps a nice preview shape)
       magick "$src" \
         -auto-orient \
-        -thumbnail "320x180^" \
+        -thumbnail "250x140^" \
         -gravity center \
-        -extent "320x180" \
+        -extent "250x140" \
         -quality 85 \
         "$thumb"
     else
@@ -82,8 +82,8 @@ fi
 
 WALLPAPER_PATH="$WOFI_CMD"
 
-# make sure the wallpapers exists 
-# (kinda redundant since wofi wont show the wallpaper 
+# make sure the wallpapers exists
+# (kinda redundant since wofi wont show the wallpaper
 # if it doesnt exist already, unless its deleted at script run time.)
 if [[ ! -f "$WALLPAPER_PATH" ]]; then
   echo "Selected wallpaper does not exist: $WALLPAPER_PATH" >&2
@@ -113,4 +113,3 @@ hyprpaper &
 
 echo "Wallpaper set."
 notify-send "wofi" "Wallpaper set."
-
