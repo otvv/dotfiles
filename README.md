@@ -16,7 +16,7 @@ my personal hyprland dotfiles
 ### dependencies
 
 ```txt
-# The bare minimum for Hyprland work properly
+# The bare minimum for Hyprland to work properly
 
 hyprland
 hyprpaper
@@ -30,7 +30,7 @@ dunst
 lxqt-policykit # or any other polkit agent
 nm-connection-editor
 blueman-manager
-grim
+grim 
 
 # Dependencies required by scripts, waybar modules, etc 
 
@@ -44,8 +44,8 @@ qt5ct
 qt6ct
 gamemode # comes with steam usually
 
-# Software that I use (needed)
-# (you can change them if you want)
+# Software that I use (needed for a more seamless experience)
+# (feel free to change them)
 
 better-control # https://github.com/better-ecosystem/better-control
 gnome-calendar
